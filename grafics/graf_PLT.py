@@ -7,11 +7,10 @@ df = pd.read_csv('MSFT.csv', sep=',')  # df - data frame
 df.head()
 
 # Назначение переменных данным из CSV файла
-a = df['year']
-b = df['earnings']
-c = df['revenue']
-d = df['gross_profit']
-e = df['number_of_shares']
+a = df['year']          # Год
+b = df['earnings']      # Выручка
+c = df['revenue']       # Чистая прибыль
+d = df['gross_profit']  # Валовая прибыль
 
 # Создание линейного графика
 plt.figure(figsize=(10, 8))  # Задание размера графика
@@ -35,12 +34,13 @@ plt.xlabel('Год', color='gray')
 plt.ylabel('Млрд. $', color='gray')
 plt.title('Финансовые показатели Microsoft Corporation с 2011-2024гг.', fontsize=16)
 plt.legend(['Выручка', 'Валовая прибыль', 'Чистая прибыль'], loc=2, title='Условные обозначения:')
-plt.savefig('histogram_PLT.png')
+plt.savefig('bar_PLT.png')
 plt.show()
 
 # Создание круговой диаграммы
 plt.figure(figsize=(10, 10))
-df[df.columns[1:4]].sum().plot.pie(autopct='%1.1f%%', labels=None)
+exploding = [0.1, 0, 0]
+df[df.columns[1:4]].sum().plot.pie(autopct='%1.1f%%', labels=None, explode=exploding)
 plt.legend(['Чистая прибыль', 'Выручка', 'Валовая прибыль'], loc=2, title='Условные обозначения:')
 plt.title('Общие финансовые показатели Microsoft Corporation с 2011-2024гг.', fontsize=16)
 plt.savefig('circular_PLT.png')
