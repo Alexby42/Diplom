@@ -7,9 +7,9 @@ df = pd.read_csv('MSFT.csv', sep=',')  # df - data frame
 df.head()
 
 # Назначение переменных данным из CSV файла
-a = df['year']          # Год
-b = df['earnings']      # Выручка
-c = df['revenue']       # Чистая прибыль
+a = df['year']  # Год
+b = df['earnings']  # Выручка
+c = df['revenue']  # Чистая прибыль
 d = df['gross_profit']  # Валовая прибыль
 
 # Создание линейного графика
@@ -27,20 +27,19 @@ plt.show()  # Вызов графика
 
 # Создание гистограммы
 plt.figure(figsize=(10, 8))
-plt.bar(a, b, bottom=d+c, color='g')
-plt.bar(a, c, bottom=d, color='r')
-plt.bar(a, d, color='b')
+plt.title('Финансовые показатели Microsoft Corporation с 2011-2024гг.', fontsize=16)
 plt.xlabel('Год', color='gray')
 plt.ylabel('Млрд. $', color='gray')
-plt.title('Финансовые показатели Microsoft Corporation с 2011-2024гг.', fontsize=16)
+plt.bar(a, c, color='r')
+plt.bar(a, d, color='b')
+plt.bar(a, b, color='g')
 plt.legend(['Выручка', 'Валовая прибыль', 'Чистая прибыль'], loc=2, title='Условные обозначения:')
 plt.savefig('bar_PLT.png')
 plt.show()
 
 # Создание круговой диаграммы
 plt.figure(figsize=(10, 10))
-exploding = [0.1, 0, 0]
-df[df.columns[1:4]].sum().plot.pie(autopct='%1.1f%%', labels=None, explode=exploding)
+df[df.columns[1:4]].sum().plot.pie(autopct='%1.1f%%', labels=None, explode=[0.1, 0, 0])
 plt.legend(['Чистая прибыль', 'Выручка', 'Валовая прибыль'], loc=2, title='Условные обозначения:')
 plt.title('Общие финансовые показатели Microsoft Corporation с 2011-2024гг.', fontsize=16)
 plt.savefig('circular_PLT.png')
