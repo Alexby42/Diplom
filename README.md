@@ -16,13 +16,13 @@
 * валовая прибыль (gross_profit)
 
 **Пример построения линейного графика с помощью библиотеки Matplotlib:**
-![linear_PLT](grafics/linear_PLT.png)
+![linear_PLT](graphics/linear_PLT.png)
 
 **Пример построения стобчатой диаграммы с помощью библиотеки Seaborn:**
-![bar_SNS](grafics/bar_SNS.png)
+![bar_SNS](graphics/bar_SNS.png)
 
 **Пример построения круговой диаграммы с помощью библиотеки Plotly:**
-![circular_PX](grafics/circular_PX.png)
+![circular_PX](graphics/circular_PX.png)
 
 **Для создания визуализаций использовались следующие функции:**
 
