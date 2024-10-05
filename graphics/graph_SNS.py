@@ -1,11 +1,10 @@
 import seaborn as sns
-import pandas as pd
 import matplotlib.pyplot as plt
+import pandas as pd
 
 # Загрузка данных из CSV файла
 df = pd.read_csv('MSFT.csv', sep=',')  # df - data frame
-# Выбор всех данных
-df.head()
+df.head()  # Выбор всех данных
 
 # Назначение переменных данным из CSV файла
 a = df['year']  # Год
@@ -26,7 +25,7 @@ plt.legend(title='Условные обозначения:')  # Название
 plt.savefig('linear_SNS.png')  # Сохранение графика в файл
 plt.show()  # Вызов графика
 
-#Создание гистограммы
+#Создание столбчатой диаграммы
 plt.figure(figsize=(14, 8))
 sns.set(style='ticks', context='paper', font_scale=1.5)  # Установка стиля графика
 sbn = sns.barplot(x=a, y=c, data=df, color='red', label='Выручка')

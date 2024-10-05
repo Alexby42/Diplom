@@ -1,11 +1,10 @@
 import plotly.express as px
-import pandas as pd
 import plotly.graph_objs as go
+import pandas as pd
 
 # Загрузка данных из CSV файла
 df = pd.read_csv('MSFT.csv', sep=',')  # df - data frame
-# Выбор всех данных
-df.head()
+df.head()  # Выбор всех данных
 
 # Назначение переменных данным из CSV файла
 a = df['year']  # Год

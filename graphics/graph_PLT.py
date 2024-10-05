@@ -3,8 +3,7 @@ import pandas as pd
 
 # Загрузка данных из CSV файла
 df = pd.read_csv('MSFT.csv', sep=',')  # df - data frame
-# Выбор всех данных
-df.head()
+df.head()  # Выбор всех данных
 
 # Назначение переменных данным из CSV файла
 a = df['year']  # Год
@@ -25,7 +24,7 @@ plt.grid()  # Отображение сетки
 plt.savefig('linear_PLT.png')  # Сохранение графика в файл
 plt.show()  # Вызов графика
 
-# Создание гистограммы
+# Создание столбчатой диаграммы
 plt.figure(figsize=(10, 8))
 plt.title('Финансовые показатели Microsoft Corporation с 2011-2024гг.', fontsize=16)
 plt.xlabel('Год', color='gray')
